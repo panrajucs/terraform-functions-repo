@@ -7,14 +7,14 @@ provider "aws" {
 resource "aws_vpc" "default" {
     cidr_block = "${var.vpc_cidr}"
     enable_dns_hostnames = true
-    tags {
+    tags = {
         Name = "${var.vpc_name}"
     }
 }
 
 resource "aws_internet_gateway" "default" {
     vpc_id = "${aws_vpc.default.id}"
-	tags {
+	tags = {
         Name = "${var.IGW_name}"
     }
 }
@@ -25,7 +25,7 @@ resource "aws_subnet" "subnets" {
     cidr_block = "${element(var.blocks, count.index)}"
     availability_zone = "${element(var.azs, count.index)}"
 
-    tags {
+    tags = {
         Name = "Terraform-Subnet-${count.index+1}"
     }
 }
@@ -38,7 +38,7 @@ resource "aws_route_table" "terraform-public" {
         gateway_id = "${aws_internet_gateway.default.id}"
     }
 
-    tags {
+    tags = {
         Name = "${var.Main_Routing_Table}"
     }
 }
