@@ -5,10 +5,10 @@ variable "amis" {
     description = "AMIs by region"
 	type = "map"
     default = {
-        us-east-1 = "ami-97785bed" # ubuntu 14.04 LTS
-		us-east-2 = "ami-f63b1193" # ubuntu 14.04 LTS
-		us-west-1 = "ami-824c4ee2" # ubuntu 14.04 LTS
-		us-west-2 = "ami-f2d3638a" # ubuntu 14.04 LTS
+        us-east-1 = "ami-0761dd91277e34178" # ubuntu 14.04 LTS
+		us-east-2 = "ami-0f4aeaec5b3ce9152" # ubuntu 14.04 LTS
+		us-west-1 = "ami-0ec0b3eb271f5afbc" # ubuntu 14.04 LTS
+		us-west-2 = "ami-0a07be880014c7b8e" # ubuntu 14.04 LTS
     }
 }
 variable "vpc_cidr" {}
